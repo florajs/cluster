@@ -1,0 +1,31 @@
+{
+    "name": "flora-cluster",
+    "version": "0.1.0",
+    "description": "Simple cluster manager module with status tracking for HTTP servers",
+    "keywords": [
+        "cluster",
+        "process manager",
+        "zero downtime",
+        "status tracking"
+    ],
+    "author": {
+        "name": "BörseGo AG",
+        "email": "it@boerse-go.de"
+    },
+    "homepage": "https://github.com/godmodelabs/flora-cluster",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/godmodelabs/flora-cluster.git"
+    },
+    "contributors": [
+        {
+            "name": "Mark Plomer",
+            "email": "mark.plomer@boerse-go.de"
+        },
+        {
+            "name": "Nico Kaiser",
+            "email": "nico.kaiser@boerse-go.de"
+        }
+    ]
+}
