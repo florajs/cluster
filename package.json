@@ -27,5 +27,8 @@
             "name": "Nico Kaiser",
             "email": "nico.kaiser@boerse-go.de"
         }
-    ]
+    ],
+    "dependencies": {
+        "bunyan": "^1.3.3"
+    }
 }
