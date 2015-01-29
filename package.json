@@ -1,6 +1,6 @@
 {
     "name": "flora-cluster",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Simple cluster manager module with status tracking for HTTP servers",
     "keywords": [
         "cluster",
