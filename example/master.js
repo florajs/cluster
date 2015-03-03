@@ -6,7 +6,7 @@ clusterMaster.run({
     exec: __dirname + '/worker.js',
     workers: 3, // defaults to os.cpus().length
 
-    args: null,
+    args: [],
     silent: false,
 
     startupTimeout: 10000,
