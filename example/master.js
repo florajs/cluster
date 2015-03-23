@@ -1,9 +1,10 @@
 'use strict';
 
-var clusterMaster = require('../').master;
+var path = require('path');
+var ClusterMaster = require('../').Master;
 
-clusterMaster.run({
-    exec: __dirname + '/worker.js',
+var master = new ClusterMaster({
+    exec: path.join(__dirname, '/worker.js'),
     workers: 3, // defaults to os.cpus().length
 
     args: [],
@@ -12,10 +13,9 @@ clusterMaster.run({
     startupTimeout: 10000,
     shutdownTimeout: 30000,
 
-    beforeReload:  function (callback) {
+    beforeReload: function (callback) {
         console.log('TODO: reloading config here ...');
-
-        clusterMaster.setConfig({
+        master.setConfig({
             workers: 3,
             startupTimeout: 10000,
             shutdownTimeout: 30000
@@ -28,3 +28,5 @@ clusterMaster.run({
         callback();
     }
 });
+
+master.run();

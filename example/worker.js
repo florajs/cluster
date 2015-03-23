@@ -1,15 +1,15 @@
 'use strict';
 
 var http = require('http');
-var clusterWorker = require('../').worker;
+var ClusterWorker = require('../').Worker;
 
-clusterWorker.run({
+var worker = new ClusterWorker({
     shutdownTimeout: 30000
 });
 
 // http server
 var server = http.createServer(function (req, res) {
-    clusterWorker.serverStatus(function (err, status) {
+    worker.serverStatus(function (err, status) {
         if (err) {
             res.writeHead(500, {'Content-Type': 'text/plain'});
             res.end(err.message);
@@ -22,7 +22,9 @@ var server = http.createServer(function (req, res) {
 });
 
 // attach flora-cluster to our server
-clusterWorker.attach(server);
+worker.attach(server);
+
+worker.run();
 
 server.on('listening', function () {
     console.log('Server running at http://127.0.0.1:1337/ - PID ' + process.pid);

@@ -1,6 +1,6 @@
 'use strict';
 
 module.exports = {
-    master: require('./lib/master'),
-    worker: require('./lib/worker')
+    Master: require('./lib/master'),
+    Worker: require('./lib/worker')
 };
