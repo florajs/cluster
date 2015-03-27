@@ -10,20 +10,24 @@ describe('flora-cluster', function () {
     });
 
     it('should expose master and worker objects', function () {
-        expect(floraCluster).to.have.property('master');
-        expect(floraCluster).to.have.property('worker');
+        expect(floraCluster).to.have.property('Master');
+        expect(floraCluster).to.have.property('Worker');
     });
 
-    describe('worker', function () {
-        it('should be an object', function () {
-            expect(floraCluster.worker).to.be.an('object');
+    describe('Worker', function () {
+        it('should be a function', function () {
+            expect(floraCluster.Worker).to.be.a('function');
         });
 
-        it('should expose functions', function () {
-            expect(floraCluster.worker).to.have.property('run');
-            expect(floraCluster.worker).to.have.property('attach');
-            expect(floraCluster.worker).to.have.property('serverStatus');
-            expect(floraCluster.worker).to.have.property('shutdown');
+        describe('instance', function () {
+            var worker = new floraCluster.Worker();
+
+            it('should expose functions', function () {
+                expect(worker).to.have.property('run');
+                expect(worker).to.have.property('attach');
+                expect(worker).to.have.property('serverStatus');
+                expect(worker).to.have.property('shutdown');
+            });
         });
     });
 });
