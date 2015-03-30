@@ -8,7 +8,7 @@ var worker = new ClusterWorker({
 });
 
 // http server
-var server = http.createServer(function (req, res) {
+var httpServer = http.createServer(function (req, res) {
     worker.serverStatus(function (err, status) {
         if (err) {
             res.writeHead(500, {'Content-Type': 'text/plain'});
@@ -22,12 +22,17 @@ var server = http.createServer(function (req, res) {
 });
 
 // attach flora-cluster to our server
-worker.attach(server);
+worker.attach(httpServer);
 
 worker.run();
 
-server.on('listening', function () {
+worker.on('close', function () {
+    console.log('Worker is closing');
+    httpServer.close();
+});
+
+httpServer.on('listening', function () {
     console.log('Server running at http://127.0.0.1:1337/ - PID ' + process.pid);
 });
 
-server.listen(1337);
+httpServer.listen(1337);
