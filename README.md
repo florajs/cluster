@@ -39,27 +39,37 @@ Examples
 The master process will start 3 workers and restarts them on crashes:
 
 ```js
-var clusterMaster = require('flora-cluster').master;
-clusterMaster.run({
-    exec: __dirname + '/worker.js',
+var ClusterMaster = require('flora-cluster').Master;
+
+var master = new ClusterMaster({
+    exec: require('path').join(__dirname, 'worker.js',
     workers: 3 // defaults to os.cpus().length
 });
+
+master.run();
 ```
 
 ### worker.js
 
 ```js
 var http = require('http');
-var clusterWorker = require('flora-cluster').worker;
+var ClusterWorker = require('flora-cluster').Worker;
 
-clusterWorker.run();
+var worker = new ClusterWorker();
 
-var server = http.createServer(function (req, res) {
+var httpServer = http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('Hello World\n');
 });
-clusterWorker.attach(server);
-server.listen(1337);
+
+worker.attach(httpServer);
+worker.run();
+
+worker.on('close', function () {
+    httpServer.close();
+});
+
+httpServer.listen(1337);
 ```
 
 ### server-status
@@ -67,7 +77,7 @@ server.listen(1337);
 You can retrieve an aggregated status from all workers:
 
 ```js
-clusterWorker.serverStatus(function (err, status) {
+worker.serverStatus(function (err, status) {
     console.log(status);
 });
 ```

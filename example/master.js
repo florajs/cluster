@@ -4,7 +4,7 @@ var path = require('path');
 var ClusterMaster = require('../').Master;
 
 var master = new ClusterMaster({
-    exec: path.join(__dirname, '/worker.js'),
+    exec: path.join(__dirname, 'worker.js'),
     workers: 3, // defaults to os.cpus().length
 
     args: [],
