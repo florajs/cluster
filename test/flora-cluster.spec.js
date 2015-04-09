@@ -23,7 +23,7 @@ describe('flora-cluster', function () {
             var worker = new floraCluster.Worker();
 
             it('should expose functions', function () {
-                expect(worker).to.have.property('run');
+                expect(worker).to.have.property('ready');
                 expect(worker).to.have.property('attach');
                 expect(worker).to.have.property('serverStatus');
                 expect(worker).to.have.property('shutdown');

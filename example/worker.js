@@ -24,8 +24,6 @@ var httpServer = http.createServer(function (req, res) {
 // attach flora-cluster to our server
 worker.attach(httpServer);
 
-worker.run();
-
 worker.on('close', function () {
     console.log('Worker is closing');
     httpServer.close();
@@ -33,6 +31,7 @@ worker.on('close', function () {
 
 httpServer.on('listening', function () {
     console.log('Server running at http://127.0.0.1:1337/ - PID ' + process.pid);
+    worker.ready();
 });
 
 httpServer.listen(1337);

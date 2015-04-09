@@ -21,8 +21,8 @@ Best practices
 
 You can perform extended tests in your worker on startup - just exit if something fails. On a graceful
 reload, the master process will cancel the reload and shutdown all workers of the new generation.
-Reload is assumed to be successful when all workers starts listen()ing. The old generation of workers
-is shutdown not before all new workers are up and running.
+Reload is assumed to be successful when all workers called their ready() function. The old generation 
+of workers is shutdown not before all new workers are up and running.
 
 ### Status
 
@@ -63,13 +63,16 @@ var httpServer = http.createServer(function (req, res) {
 });
 
 worker.attach(httpServer);
-worker.run();
 
 worker.on('close', function () {
     httpServer.close();
 });
 
 httpServer.listen(1337);
+
+httpServer.on('listening', function () {
+    worker.ready();
+});
 ```
 
 ### server-status
