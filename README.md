@@ -3,6 +3,7 @@ Flora Cluster
 
 [![Build Status](https://travis-ci.org/godmodelabs/flora-cluster.svg?branch=master)](https://travis-ci.org/godmodelabs/flora-cluster)
 [![NPM version](https://badge.fury.io/js/flora-cluster.svg)](https://www.npmjs.com/package/flora-cluster)
+[![Dependencies](https://img.shields.io/david/godmodelabs/flora-cluster.svg)](https://david-dm.org/godmodelabs/flora-cluster)
 
 Simple cluster manager module with status tracking for HTTP servers.
 
