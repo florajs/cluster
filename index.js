@@ -2,5 +2,6 @@
 
 module.exports = {
     Master: require('./lib/master'),
-    Worker: require('./lib/worker')
+    Worker: require('./lib/worker'),
+    Status: require('./lib/status')
 };
