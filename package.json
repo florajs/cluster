@@ -33,21 +33,21 @@
     }
   ],
   "dependencies": {
-    "bunyan": "^1.4.0"
+    "bunyan": "^1.5.1"
   },
   "devDependencies": {
-    "chai": "^3.2.0",
-    "eslint": "^1.4.1",
+    "chai": "^3.4.1",
+    "eslint": "^1.10.3",
     "grunt": "0.4.x",
     "grunt-cli": "^0.1.13",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-eslint": "^17.2.0",
-    "grunt-jsdoc": "^1.0.0",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-eslint": "^17.3.1",
+    "grunt-jsdoc": "^1.1.0",
     "grunt-mocha-istanbul": "^3.0.1",
     "grunt-mocha-test": "^0.12.7",
-    "istanbul": "^0.4.0",
-    "load-grunt-tasks": "^3.2.0",
-    "mocha": "^2.3.3",
+    "istanbul": "^0.4.2",
+    "load-grunt-tasks": "^3.4.0",
+    "mocha": "^2.3.4",
     "mocha-bamboo-reporter": "^1.1.0"
   },
   "engines": {
