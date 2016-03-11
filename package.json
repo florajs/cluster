@@ -37,11 +37,11 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "eslint": "^1.10.3",
+    "eslint": "^2.3.0",
     "grunt": "0.4.x",
     "grunt-cli": "^0.1.13",
-    "grunt-contrib-clean": "^0.7.0",
-    "grunt-eslint": "^17.3.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-eslint": "^18.0.0",
     "grunt-jsdoc": "^1.1.0",
     "grunt-mocha-istanbul": "^3.0.1",
     "grunt-mocha-test": "^0.12.7",
@@ -51,7 +51,6 @@
     "mocha-bamboo-reporter": "^1.1.0"
   },
   "engines": {
-    "node": ">=0.10.0",
-    "iojs": ">=2.0"
+    "node": ">=0.10.0"
   }
 }
