@@ -1,22 +1,22 @@
 'use strict';
 
-var http = require('http');
-var ClusterWorker = require('../').Worker;
+const { createServer } = require('http');
+const { Worker } = require('../');
 
-var worker = new ClusterWorker({
+const worker = new Worker({
     shutdownTimeout: 30000
 });
 
 // http server
-var httpServer = http.createServer(function (req, res) {
-    worker.serverStatus(function (err, status) {
+const httpServer = createServer((req, res) => {
+    worker.serverStatus((err, status) => {
         if (err) {
-            res.writeHead(500, {'Content-Type': 'text/plain'});
+            res.writeHead(500, { 'Content-Type': 'text/plain' });
             res.end(err.message);
             return;
         }
 
-        res.writeHead(200, {'Content-Type': 'application/json'});
+        res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(status));
     });
 });
@@ -24,12 +24,12 @@ var httpServer = http.createServer(function (req, res) {
 // attach flora-cluster to our server
 worker.attach(httpServer);
 
-worker.on('close', function () {
+worker.on('close', () => {
     console.log('Worker is closing');
     httpServer.close();
 });
 
-httpServer.on('listening', function () {
+httpServer.on('listening', () => {
     console.log('Server running at http://127.0.0.1:1337/ - PID ' + process.pid);
     worker.ready();
 });
