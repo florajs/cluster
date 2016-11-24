@@ -26,9 +26,9 @@ Examples
 The master process will start 3 workers and restarts them on crashes:
 
 ```js
-var ClusterMaster = require('flora-cluster').Master;
+const { Master } = require('flora-cluster');
 
-var master = new ClusterMaster({
+const master = new ClusterMaster({
     exec: require('path').join(__dirname, 'worker.js',
     workers: 3 // defaults to os.cpus().length
 });
@@ -39,27 +39,23 @@ master.run();
 ### worker.js
 
 ```js
-var http = require('http');
-var ClusterWorker = require('flora-cluster').Worker;
+const { createServer } = require('http');
+const { Worker } = require('flora-cluster');
 
-var worker = new ClusterWorker();
+const worker = new ClusterWorker();
 
-var httpServer = http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
+const httpServer = createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('Hello World\n');
 });
 
 worker.attach(httpServer);
 
-worker.on('close', function () {
-    httpServer.close();
-});
+worker.on('close', () => httpServer.close());
 
 httpServer.listen(1337);
 
-httpServer.on('listening', function () {
-    worker.ready();
-});
+httpServer.on('listening', () => worker.ready());
 ```
 
 ### server-status
@@ -67,9 +63,7 @@ httpServer.on('listening', function () {
 You can retrieve an aggregated status from all workers:
 
 ```js
-worker.serverStatus(function (err, status) {
-    console.log(status);
-});
+worker.serverStatus((err, status) => console.log(status));
 ```
 
 ### full example
