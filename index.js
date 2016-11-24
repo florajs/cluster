@@ -1,7 +1,7 @@
 'use strict';
 
-module.exports = {
-    Master: require('./lib/master'),
-    Worker: require('./lib/worker'),
-    Status: require('./lib/status')
-};
+const Master = require('./lib/master');
+const Worker = require('./lib/worker');
+const Status = require('./lib/status');
+
+module.exports = { Master, Worker, Status };
