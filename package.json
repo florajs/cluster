@@ -19,10 +19,7 @@
   },
   "homepage": "https://github.com/godmodelabs/flora-cluster",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/godmodelabs/flora-cluster.git"
-  },
+  "repository": "godmodelabs/flora-cluster",
   "contributors": [
     {
       "name": "Mark Plomer",
