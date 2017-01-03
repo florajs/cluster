@@ -7,6 +7,8 @@ Flora Cluster
 
 Simple cluster manager module with status tracking for HTTP servers.
 
+Flora requires __node v6__ or higher.
+
 Features
 --------
 
@@ -78,7 +80,7 @@ Best practices
 
 You can perform extended tests in your worker on startup - just exit if something fails. On a graceful
 reload, the master process will cancel the reload and shutdown all workers of the new generation.
-Reload is assumed to be successful when all workers called their ready() function. The old generation 
+Reload is assumed to be successful when all workers called their ready() function. The old generation
 of workers is shutdown not before all new workers are up and running.
 
 ### Status
