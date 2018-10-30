@@ -1,3 +1,5 @@
+/* global describe, it, beforeEach */
+
 'use strict';
 
 const { expect } = require('chai');
@@ -7,7 +9,9 @@ const Status = require('../lib/status');
 describe.only('status', () => {
     let status;
 
-    beforeEach(() => status = new Status());
+    beforeEach(() => {
+        status = new Status();
+    });
 
     describe('set', () => {
         it('should support key/value', () => {

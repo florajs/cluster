@@ -1,5 +1,4 @@
-Flora Cluster
-=============
+# Flora Cluster
 
 [![Build Status](https://travis-ci.org/godmodelabs/flora-cluster.svg?branch=master)](https://travis-ci.org/godmodelabs/flora-cluster)
 [![NPM version](https://badge.fury.io/js/flora-cluster.svg)](https://www.npmjs.com/package/flora-cluster)
@@ -7,10 +6,9 @@ Flora Cluster
 
 Simple cluster manager module with status tracking for HTTP servers.
 
-Flora requires __node v6__ or higher.
+Flora requires __node v8__ or higher.
 
-Features
---------
+## Features
 
 - Updates in production with zero downtime - *complete worker code is replaceable without shutdown*
 - Self-monitoring process-management - *respawn workers on error (as you would expect)*
@@ -19,9 +17,7 @@ Features
 - Status extendible (global counters and per-request infos) - *trace your app in realtime - in production*
 - Node.js cluster based implementation
 
-
-Examples
---------
+## Examples
 
 ### master.js
 
@@ -72,9 +68,7 @@ worker.serverStatus((err, status) => console.log(status));
 
 See "example" folder.
 
-
-Best practices
---------------
+## Best practices
 
 ### Startup-Tests
 
@@ -89,8 +83,6 @@ Aggregated status over all workers can be requested from inside a worker and fro
 So it is possible to integrate the status into your application. Another possibility is to start a
 HTTP server inside the master process on a management port for those requests.
 
-
-License
--------
+## License
 
 [MIT](LICENSE)

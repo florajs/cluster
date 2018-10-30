@@ -1,28 +1,30 @@
+/* global describe, it */
+
 'use strict';
 
-var expect = require('chai').expect;
+const { expect } = require('chai');
 
-var floraCluster = require('../');
+const floraCluster = require('../');
 
-describe('flora-cluster', function () {
-    it('should be an object', function () {
+describe('flora-cluster', () => {
+    it('should be an object', () => {
         expect(floraCluster).to.be.an('object');
     });
 
-    it('should expose master and worker objects', function () {
+    it('should expose master and worker objects', () => {
         expect(floraCluster).to.have.property('Master');
         expect(floraCluster).to.have.property('Worker');
     });
 
-    describe('Worker', function () {
-        it('should be a function', function () {
+    describe('Worker', () => {
+        it('should be a function', () => {
             expect(floraCluster.Worker).to.be.a('function');
         });
 
-        describe('instance', function () {
-            var worker = new floraCluster.Worker();
+        describe('instance', () => {
+            const worker = new floraCluster.Worker();
 
-            it('should expose functions', function () {
+            it('should expose functions', () => {
                 expect(worker).to.have.property('ready');
                 expect(worker).to.have.property('attach');
                 expect(worker).to.have.property('serverStatus');
