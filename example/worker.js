@@ -11,12 +11,13 @@ const worker = new Worker({
 
 // http server
 const httpServer = createServer((req, res) => {
-    worker.serverStatus()
-        .then((status) => {
+    worker
+        .serverStatus()
+        .then(status => {
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify(status));
         })
-        .catch((err) => {
+        .catch(err => {
             res.writeHead(500, { 'Content-Type': 'text/plain' });
             res.end(err.message);
         });
