@@ -12,6 +12,6 @@
     "no-unused-vars": ["error", { "argsIgnorePattern": "next" }]
   },
   "parserOptions": {
-    "ecmaVersion": 2015
+    "ecmaVersion": 2017
   }
 }

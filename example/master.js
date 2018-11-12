@@ -15,19 +15,16 @@ const master = new Master({
     startupTimeout: 10000,
     shutdownTimeout: 30000,
 
-    beforeReload: (callback) => {
+    beforeReload: async () => {
         console.log('TODO: reloading config here ...');
         master.setConfig({
             workers: 3,
             startupTimeout: 10000,
             shutdownTimeout: 30000
         });
-
-        callback();
     },
-    beforeShutdown: (callback) => {
+    beforeShutdown: async () => {
         console.log('Shutting down now ...');
-        callback();
     }
 });
 

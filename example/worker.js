@@ -11,16 +11,15 @@ const worker = new Worker({
 
 // http server
 const httpServer = createServer((req, res) => {
-    worker.serverStatus((err, status) => {
-        if (err) {
+    worker.serverStatus()
+        .then((status) => {
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(status));
+        })
+        .catch((err) => {
             res.writeHead(500, { 'Content-Type': 'text/plain' });
             res.end(err.message);
-            return;
-        }
-
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify(status));
-    });
+        });
 });
 
 // attach flora-cluster to our server
