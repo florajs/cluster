@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 'use strict';
 
 const { createServer } = require('http');
@@ -27,12 +25,12 @@ const httpServer = createServer((req, res) => {
 worker.attach(httpServer);
 
 worker.on('close', () => {
-    console.log('Worker is closing');
+    worker.log.info('Worker is closing');
     httpServer.close();
 });
 
 httpServer.on('listening', () => {
-    console.log('Server running at http://127.0.0.1:1337/ - PID ' + process.pid);
+    worker.log.info('Server running on port 3000');
     worker.ready();
 });
 

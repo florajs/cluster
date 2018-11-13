@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 'use strict';
 
 const path = require('path');
@@ -16,15 +14,17 @@ const master = new Master({
     shutdownTimeout: 30000,
 
     beforeReload: async () => {
-        console.log('TODO: reloading config here ...');
-        master.setConfig({
+        master.log.info('beforeReload');
+        // e.g. reload configuration from file
+        const config = {
             workers: 3,
             startupTimeout: 10000,
             shutdownTimeout: 30000
-        });
+        };
+        master.setConfig(config);
     },
     beforeShutdown: async () => {
-        console.log('Shutting down now ...');
+        master.log.info('beforeShutdown');
     }
 });
 

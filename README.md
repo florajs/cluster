@@ -6,7 +6,7 @@
 
 Simple cluster manager module with status tracking for HTTP servers.
 
-Flora requires __node v8__ or higher.
+Flora requires __Node.js v10__ or higher.
 
 ## Features
 
@@ -24,10 +24,11 @@ Flora requires __node v8__ or higher.
 The master process will start 3 workers and restarts them on crashes:
 
 ```js
+const path = require('path');
 const { Master } = require('flora-cluster');
 
 const master = new ClusterMaster({
-    exec: require('path').join(__dirname, 'worker.js',
+    exec: path.join(__dirname, 'worker.js',
     workers: 3 // defaults to os.cpus().length
 });
 
@@ -51,20 +52,20 @@ worker.attach(httpServer);
 
 worker.on('close', () => httpServer.close());
 
-httpServer.listen(1337);
+httpServer.listen(3000);
 
 httpServer.on('listening', () => worker.ready());
 ```
 
-### server-status
+### Server status
 
-You can retrieve an aggregated status from all workers:
+You can retrieve an aggregated status from all workers from any worker:
 
 ```js
-worker.serverStatus((err, status) => console.log(status));
+console.log(await worker.serverStatus);
 ```
 
-### full example
+### Full example
 
 See "example" folder.
 
