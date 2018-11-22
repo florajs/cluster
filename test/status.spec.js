@@ -6,7 +6,7 @@ const { expect } = require('chai');
 
 const Status = require('../lib/status');
 
-describe.only('status', () => {
+describe('status', () => {
     let status;
 
     beforeEach(() => {
