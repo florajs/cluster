@@ -6,8 +6,6 @@
 
 Simple cluster manager module with status tracking for HTTP servers.
 
-Flora requires __Node.js v10__ or higher.
-
 ## Features
 
 - Updates in production with zero downtime - *complete worker code is replaceable without shutdown*
