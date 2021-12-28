@@ -32,7 +32,7 @@
     }
   ],
   "dependencies": {
-    "bunyan": "^1.8.15"
+    "abstract-logging": "^2.0.1"
   },
   "devDependencies": {
     "chai": "^4.3.4",
