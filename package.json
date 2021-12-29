@@ -7,6 +7,10 @@
     "test": "eslint . && mocha",
     "lint": "eslint ."
   },
+  "files": [
+    "index.js",
+    "lib/"
+  ],
   "pre-commit": "test",
   "keywords": [
     "cluster",
