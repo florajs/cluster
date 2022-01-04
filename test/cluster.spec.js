@@ -2,9 +2,9 @@
 
 const { expect } = require('chai');
 
-const floraCluster = require('../');
+const floraCluster = require('..');
 
-describe('flora-cluster', () => {
+describe('cluster', () => {
     it('should be an object', () => {
         expect(floraCluster).to.be.an('object');
     });

@@ -1,8 +1,8 @@
-# flora-cluster
+# @florajs/cluster
 
 ![](https://github.com/florajs/cluster/workflows/ci/badge.svg)
-[![NPM version](https://img.shields.io/npm/v/flora-cluster.svg?style=flat)](https://www.npmjs.com/package/flora-cluster)
-[![NPM downloads](https://img.shields.io/npm/dm/flora-cluster.svg?style=flat)](https://www.npmjs.com/package/flora-cluster)
+[![NPM version](https://img.shields.io/npm/v/@florajs/cluster.svg?style=flat)](https://www.npmjs.com/package/@florajs/cluster)
+[![NPM downloads](https://img.shields.io/npm/dm/@florajs/cluster.svg?style=flat)](https://www.npmjs.com/package/@florajs/cluster)
 
 Simple cluster manager module with status tracking for HTTP servers.
 
@@ -23,7 +23,7 @@ The master process will start 3 workers and restarts them on crashes:
 
 ```js
 const path = require('path');
-const { Master } = require('flora-cluster');
+const { Master } = require('@florajs/cluster');
 
 const master = new Master({
     exec: path.join(__dirname, 'worker.js'),
@@ -37,7 +37,7 @@ master.run();
 
 ```js
 const { createServer } = require('http');
-const { Worker } = require('flora-cluster');
+const { Worker } = require('@florajs/cluster');
 
 const worker = new Worker();
 

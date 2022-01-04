@@ -21,7 +21,7 @@ const httpServer = createServer((req, res) => {
         });
 });
 
-// attach flora-cluster to our server
+// attach @florajs/cluster to our server
 worker.attach(httpServer);
 
 worker.on('close', () => {
