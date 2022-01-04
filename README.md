@@ -1,4 +1,4 @@
-# Flora Cluster
+# flora-cluster
 
 ![](https://github.com/florajs/cluster/workflows/ci/badge.svg)
 [![NPM version](https://img.shields.io/npm/v/flora-cluster.svg?style=flat)](https://www.npmjs.com/package/flora-cluster)
