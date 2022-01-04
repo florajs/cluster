@@ -1,6 +1,6 @@
 # Flora Cluster
 
-![](https://github.com/godmodelabs/flora-cluster/workflows/ci/badge.svg)
+![](https://github.com/florajs/cluster/workflows/ci/badge.svg)
 [![NPM version](https://img.shields.io/npm/v/flora-cluster.svg?style=flat)](https://www.npmjs.com/package/flora-cluster)
 [![NPM downloads](https://img.shields.io/npm/dm/flora-cluster.svg?style=flat)](https://www.npmjs.com/package/flora-cluster)
 

@@ -22,9 +22,9 @@
     "name": "BörseGo AG",
     "email": "it@boerse-go.de"
   },
-  "homepage": "https://github.com/godmodelabs/flora-cluster",
+  "homepage": "https://github.com/florajs/cluster",
   "license": "MIT",
-  "repository": "godmodelabs/flora-cluster",
+  "repository": "florajs/cluster",
   "contributors": [
     {
       "name": "Mark Plomer",
