@@ -11,6 +11,7 @@
     "index.js",
     "lib/"
   ],
+  "types": "index.d.ts",
   "pre-commit": "test",
   "keywords": [
     "florajs",
