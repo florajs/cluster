@@ -1,6 +1,6 @@
 {
   "name": "@florajs/cluster",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Simple cluster manager module with status tracking for HTTP servers",
   "main": "index.js",
   "scripts": {
