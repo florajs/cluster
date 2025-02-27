@@ -12,7 +12,7 @@
     "index.d.ts",
     "lib/"
   ],
-  "types": "index.ts",
+  "types": "index.d.ts",
   "pre-commit": "test",
   "keywords": [
     "florajs",
