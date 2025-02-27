@@ -9,9 +9,10 @@
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "lib/"
   ],
-  "types": "index.d.ts",
+  "types": "index..ts",
   "pre-commit": "test",
   "keywords": [
     "florajs",
