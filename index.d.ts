@@ -93,7 +93,7 @@ type MasterOptions<WorkerArguments extends Array<unknown> = Array<unknown>> = {
     startupTimeout?: number,
     shutdownTimeout?: number,
     silent?: boolean,
-    logger?: bunyan,
+    log?: bunyan,
     beforeReload?: () => Promise<void>,
     beforeShutdown?: () => Promise<void>,
 };
